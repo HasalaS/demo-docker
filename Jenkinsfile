@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t hasi/sb-docker:$BUILD_NUMBER .'
+                sh 'docker build -t hasi/sb-docker:latest .'
                 echo "Docker Image Tag Name:${dockerImageTag}"
             }
         }
@@ -23,7 +23,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push hasi/sb-docker:$BUILD_NUMBER'
+                sh 'docker push hasi/sb-docker:latest'
             }
         }
 }
