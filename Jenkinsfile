@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image') {
             steps {  
                 sh 'docker build -t hasi/sb-docker:$BUILD_NUMBER .'
-                echo "Docker Image Tag Name: ${dockerImageTag}"
+                echo "Docker Image Tag Name:${dockerImageTag}"
             }
         }
         stage('login to dockerhub') {
